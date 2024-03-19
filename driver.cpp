@@ -17,5 +17,8 @@ int main() {
     cout << "Removed element from queue: " << pq.dequeue() << endl;
     cout << "New front element (next highest priority) is: " << pq.peekFront() << endl;
 
+    // Add the test code for case 2 here.
+    // You can add a header file for the priority queue for exercise 2 or not it don't matter
+
     return 0;
 }
