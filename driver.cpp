@@ -1,5 +1,5 @@
 #include <iostream>
-#include "priority_queue.h";
+#include "priority_queue.h"
 using namespace std;
 
 int main() {
