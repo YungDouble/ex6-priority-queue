@@ -1,3 +1,17 @@
+/*
+* Author: Davos DeHoyos
+ * Class: Data Structures
+ * Assignment: Priority Queue (Exercise 6)
+ * File: driver.cpp
+ * Description:
+ *     This file tests the PriorityQueue class, which implements a priority
+ *     queue where elements are prioritized by their data values. The program
+ *     enqueues several elements, displays the queue, and demonstrates the
+ *     functionality of peek and dequeue operations.
+ *
+ * Date: [11/05/2024]
+ */
+
 #include <iostream>
 #include "priority_queue.h"
 using namespace std;
