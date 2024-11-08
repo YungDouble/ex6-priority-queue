@@ -52,10 +52,12 @@ int PriorityQueue::peekFront() const {
     return front->data;
 }
 
-// Implementation for displayQueue() goes here.
-    /*
-    Exercise 1: Implementing the displayQueue Method
-    Implement a method called displayQueue in the PriorityQueue class that prints all the elements
-    in the queue from front to back, without modifying the queue. This will help you to understand
-    how to traverse linked lists.
-    */
+// Traverse and print each element from front to back
+void PriorityQueue::displayQueue() const {
+  Node* current = fron;
+  while (current != nullptr) {
+    std::cout << current->data << " ";
+    current = current->next;
+  }
+  std::cout << std::endl;
+}
