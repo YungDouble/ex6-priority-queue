@@ -32,19 +32,10 @@ void PriorityQueue2::enqueue(int data, int priority) {
     }
 }
 
-
-// Implementation for displayQueue() goes here.
-    /*
-    Exercise 1: Implementing the displayQueue Method
-    Implement a method called displayQueue in the PriorityQueue class that prints all the elements
-    in the queue from front to back, without modifying the queue. This will help you to understand
-    how to traverse linked lists.
-    */
-
 void PriorityQueue2::displayQueue() const {
     Node2* temp = front;
     while (temp != nullptr) {
-        std::cout << temp->data << " ";
+        std::cout << "Data: " << temp->data << ", Priority: " << temp->priority << " ";
         temp = temp->next;
     }
     std::cout << std::endl;
