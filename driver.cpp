@@ -2,7 +2,6 @@
 * Author: Davos DeHoyos
  * Class: Data Structures
  * Assignment: Priority Queue (Exercise 6)
- * File: driver.cpp
  * Description:
  *     This file tests the PriorityQueue class, which implements a priority
  *     queue where elements are prioritized by their data values. The program
@@ -14,9 +13,10 @@
 
 #include <iostream>
 #include "priority_queue.h"
-using namespace std;
 
 int main() {
+    std::cout << "Testing PriorityQueu (without separate priority field):" << std::endl;
+
     PriorityQueue pq;
     pq.enqueue(30);
     pq.enqueue(10);
@@ -27,12 +27,11 @@ int main() {
     pq.enqueue(1);
     pq.enqueue(0);
 
-    cout << "Front element (highest priority) is: " << pq.peekFront() << endl;
-    cout << "Removed element from queue: " << pq.dequeue() << endl;
-    cout << "New front element (next highest priority) is: " << pq.peekFront() << endl;
-
-    // Add the test code for case 2 here.
-    // You can add a header file for the priority queue for exercise 2 or not it don't matter
+    std::cout << "Queue contents: ";
+    pq.displayQueue();
+    std::cout << "Front element (highest priority) is: " << pq.peekFront() << std::endl;
+    std::cout << "Removed element from queue: " << pq.dequeue() << std::endl;
+    std::cout << "New front element (highest priority) is: " << pq.peekFront() << std::endl;
 
     return 0;
 }
