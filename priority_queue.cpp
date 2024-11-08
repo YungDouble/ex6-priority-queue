@@ -54,7 +54,7 @@ int PriorityQueue::peekFront() const {
 
 // Traverse and print each element from front to back
 void PriorityQueue::displayQueue() const {
-  Node* current = fron;
+  Node* current = front;
   while (current != nullptr) {
     std::cout << current->data << " ";
     current = current->next;
