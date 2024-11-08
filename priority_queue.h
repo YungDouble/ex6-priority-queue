@@ -27,7 +27,7 @@ public:
     int dequeue();
     bool isEmpty() const;
     int peekFront() const;
-    // Exercise 1 Placeholder: void displayQueue() const;
+    void displayQueue() const;
 };
 
 #endif // PRIORITYQUEUE_H
