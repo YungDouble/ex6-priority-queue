@@ -15,7 +15,21 @@ PriorityQueue2::~PriorityQueue2() {
 
 void PriorityQueue2::enqueue(int data, int priority) {
     Node2* newNode = new Node2(data, priority);
-    // Fill your code here
+
+    // Insert newNode at the correct based on priority
+    if (front == nullptr || priority > front->priority) {
+      // Insert at the front if the queue is empty or newNode has highest priority
+      newNode->next = front;
+      front = newNode;
+    } else {
+      // Traverse to find the correct position base on priority
+      Node2* current = front;
+      while (current->next != nullptr && current->next->priority >= priority) {
+        current = current->next;
+      }
+      newNode->next = current->next;
+      current->next = newNode;
+    }
 }
 
 
