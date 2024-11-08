@@ -19,7 +19,7 @@ void testPriorityQueue() {
 
   std::cout << "\nRunning tests for PriorityQueue (without separate priority field):\n";
 
-  // Tets enqueue and peekFront
+  // Test enqueue and peekFront
   pq.enqueue(30);
   pq.enqueue(10);
   pq.enqueue(20);
