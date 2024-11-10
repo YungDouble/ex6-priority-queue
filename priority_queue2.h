@@ -1,5 +1,5 @@
-#ifndef PRIORITYQUEUE_H
-#define PRIORITYQUEUE_H
+#ifndef PRIORITYQUEUE2_H
+#define PRIORITYQUEUE2_H
 
 // Forward declaration of Node class to avoid circular dependency
 class Node2 {
@@ -25,7 +25,10 @@ public:
 
     // Member function declarations
     void enqueue(int data, int priority);
+    int dequeue();
+    bool isEmpty() const;
+    int peekFront() const;
     void displayQueue() const;
 };
 
-#endif // PRIORITYQUEUE_H
+#endif // PRIORITYQUEUE2_H
