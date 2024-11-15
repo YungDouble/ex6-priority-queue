@@ -1,5 +1,53 @@
+/*
+ * Author: Davos DeHoyos
+ * Class: Data Structures
+ * Assignment: Priority Queue (Exercise 6 - Priority Queue with Separate Priority Field)
+ * Description:
+ *     This file tests the PriorityQueue2 class, which implements a priority
+ *     queue where elements are prioritized by a separate priority field.
+ *     The program enqueues elements with specific priorities, displays the
+ *     queue, and demonstrates peek and dequeue operations, along with edge cases.
+ *     Additionally, it includes automatic testing with random values.
+ *
+ * Date: 11/05/2024
+ */
+
 #include <iostream>
+#include <random>
 #include "priority_queue2.h"
+
+// Function to generate random values and priorities
+void automaticTest(PriorityQueue2& pq, int numTests = 10) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> valueDist(-100, 100);
+    std::uniform_int_distribution<> priorityDist(1, 10);
+
+    std::cout << "\n[Automatic Test] Enqueue random elements:\n";
+    for (int i = 0; i < numTests; ++i) {
+        int randomValue = valueDist(gen);
+        int randomPriority = priorityDist(gen);
+        pq.enqueue(randomValue, randomPriority);
+        std::cout << "Enqueued: value = " << randomValue << ", priority = " << randomPriority << "\n";
+    }
+
+    // Display the queue after random enqueues
+    std::cout << "Queue contents after random enqueues (expected order by priority):\n";
+    pq.displayQueue();
+
+    // Perform some peek and dequeue operations automatically
+    if (!pq.isEmpty()) {
+        std::cout << "\n[Automatic Test] peekFront and dequeue operations:\n";
+        std::cout << "peekFront returns: " << pq.peekFront() << "\n";
+        std::cout << "Dequeuing elements in priority order:\n";
+        while (!pq.isEmpty()) {
+            std::cout << "Dequeued: " << pq.dequeue() << "\n";
+        }
+    }
+
+    // Final check for empty queue
+    std::cout << (pq.isEmpty() ? "PASS: Queue is empty after all dequeues\n" : "FAIL: Queue is not empty after all dequeues\n");
+}
 
 void testPriorityQueue2() {
     PriorityQueue2 pq;
@@ -55,6 +103,9 @@ void testPriorityQueue2() {
     } else {
         std::cout << "FAIL: isEmpty expected true after all elements are dequeued but got false\n";
     }
+
+    // Run automatic tests with random values and priorities
+    automaticTest(pq);
 }
 
 int main() {
