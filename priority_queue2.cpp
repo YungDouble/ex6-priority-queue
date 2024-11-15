@@ -13,6 +13,7 @@ PriorityQueue2::~PriorityQueue2() {
     }
 }
 
+// Adds a new node with specified data and priority to the queue
 void PriorityQueue2::enqueue(int data, int priority) {
     Node2* newNode = new Node2(data, priority);
 
@@ -22,6 +23,7 @@ void PriorityQueue2::enqueue(int data, int priority) {
         front = newNode;
     } else {
         Node2* current = front;
+        // Travers to find the correct insertion point
         while (current->next != nullptr && current->next->priority >= priority) {
             current = current->next;
         }
@@ -29,8 +31,6 @@ void PriorityQueue2::enqueue(int data, int priority) {
         current->next = newNode;
     }
 }
-
-// Missing functions
 
 int PriorityQueue2::dequeue() {
     if (isEmpty()) {
@@ -59,8 +59,8 @@ int PriorityQueue2::peekFront() const {
 void PriorityQueue2::displayQueue() const {
     Node2* temp = front;
     while (temp != nullptr) {
-        std::cout << "Data: " << temp->data << ", Priority: " << temp->priority << " ";
+        std::cout << "[Data: " << temp->data << ", Priority: " << temp->priority << "] -> ";
         temp = temp->next;
     }
-    std::cout << std::endl;
+    std::cout << "null" << std::endl;
 }
