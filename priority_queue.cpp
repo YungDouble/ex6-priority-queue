@@ -13,12 +13,15 @@ PriorityQueue::~PriorityQueue() {
     }
 }
 
+// Adds an element to the priority queue base on its priority
 void PriorityQueue::enqueue(int data) {
     Node* newNode = new Node(data);
+    // Insert newNode at the front it it's the highest priority
     if (front == nullptr || newNode->data < front->data) {
         newNode->next = front;
         front = newNode;
     } else {
+        // FInd the correct position based on priority
         Node* temp = front;
         while (temp->next != nullptr && temp->next->data <= newNode->data) {
             temp = temp->next;
